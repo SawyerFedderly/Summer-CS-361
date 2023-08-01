@@ -41,3 +41,5 @@ difference = time_comparison_microservice.diff(starttime, endtime)
 print(difference)
 
 # UML Diagram
+
+![image](https://github.com/SawyerFedderly/Summer-CS-361/assets/131832431/bbb92f8d-3475-46cb-ad4f-684207ea4d30)
