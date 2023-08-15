@@ -1,45 +1,43 @@
-My microservice is a python file that communicates with the main program through the built-in python library, or system calls.
+My microservice is a python file that communicates with the main program through two different text files.
 
 # How to programmatically REQUEST data:
 
-1) import the time_comparison_microservice file
+1) open the text file named "timecomp.txt"
 
-2) input the start and end time variables
-
-3) call the microservice function using the start and end times as parameters: 
-time_comparison_microservice.diff(starttime, endtime)
+2) write the start and end time variables to the text file
 
 ### Example call:
 
-import time_comparison_microservice
+textFile = open("timecomp.txt", "w")
 
-starttime = datetime.strptime("4:25:40", "%H:%M:%S")
+starttime = ("4:25:40")
 
-endtime = datetime.strptime("11:40:10", "%H:%M:%S")
+endtime = ("11:40:10")
 
-time_comparison_microservice.diff(starttime, endtime)
+textFile.write(starttime)
+
+textFile.write("\n")
+
+textFile.write(endtime)
+
+textFile.close()
 
 # How to programmatically RECEIVE data:
 
-1) import the time_comparison_microservice file
+1) run the time_comparison_microservice_v2 file to compare the two times and write the difference into another text file
 
-2) input the start and end time variables
+2) open the text file "timeresult.txt"
 
-3) call the microservice function using the start and end times as parameters and save the data to a variable: 
-difference = time_comparison_microservice.diff(starttime, endtime)
+3) read the contents of the text file and print them to the console
 
 ### Example call:
 
-import time_comparison_microservice
+textFile2 = open("timeresult.txt", "r")
 
-starttime = datetime.strptime("4:25:40", "%H:%M:%S")
-
-endtime = datetime.strptime("11:40:10", "%H:%M:%S")
-
-difference = time_comparison_microservice.diff(starttime, endtime)
+difference = textFile2.read()
 
 print(difference)
 
 # UML Diagram
 
-![image](https://github.com/SawyerFedderly/Summer-CS-361/assets/131832431/bbb92f8d-3475-46cb-ad4f-684207ea4d30)
+![image](https://github.com/SawyerFedderly/Summer-CS-361/assets/131832431/5e2a37fb-f443-4919-a033-6b2a854218e3)
